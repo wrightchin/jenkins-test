@@ -19,7 +19,7 @@ pipeline {
       steps {
         echo "build start ..."
         script {
-          app = docker.build("wrightchin/jenkins-test")
+          sh "docker build -t jenkins-test ."
         }
       }
     }
@@ -30,14 +30,14 @@ pipeline {
       }
     }
 
-  stage('Deploy') {
-    steps {
-      script {
-        app.push("${env.BUILD_NUMBER}")
-        app.push("latest")
-      }
-    }
-  } 
+  // stage('Deploy') {
+  //   steps {
+  //     script {
+  //       app.push("${env.BUILD_NUMBER}")
+  //       app.push("latest")
+  //     }
+  //   }
+  // } 
 
   }
 }
