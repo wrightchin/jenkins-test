@@ -1,4 +1,4 @@
-// pipeline {
+pipeline {
 //   environment {
 //     registry = "wrightchin/jenkins-test"
 //     registryCredential = 'dockerhub'
