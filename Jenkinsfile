@@ -4,24 +4,28 @@ pipeline {
 //     registryCredential = 'dockerhub'
 //     dockerImage = ''
 //   }
-  agent any
-
-  tools {nodejs "nodejs"}
-
-  stages {
-    stage('Clone Repo') {
-      steps {
-        echo "clone start ..."
-        script {
-          checkout scm
-        }
-      }
+  agent {
+    docker {
+      image 'node:16'
+      args '-p 3000:3000'
     }
+  }
+
+  // stages {
+  //   stage('Clone Repo') {
+  //     steps {
+  //       echo "clone start ..."
+  //       script {
+  //         checkout scm
+  //       }
+  //     }
+  //   }
 
     stage('Build') {
       steps {
         echo "build start ..."
         script {
+          sh 'npm install'
           sh 'npm start'
         }
       }
