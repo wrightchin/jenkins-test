@@ -5,6 +5,9 @@ pipeline {
 //     dockerImage = ''
 //   }
   agent any
+
+  tools {nodejs "nodejs"}
+
   stages {
     stage('Clone Repo') {
       steps {
