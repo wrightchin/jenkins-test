@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'Build start!'
-        echo 'network test'
+        echo "build start ..."
+        docker build -t jenkins-test .
       }
     }
 
