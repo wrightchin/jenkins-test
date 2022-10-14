@@ -1,9 +1,9 @@
-pipeline {
-  environment {
-    registry = "wrightchin/jenkins-test"
-    registryCredential = 'dockerhub'
-    dockerImage = ''
-  }
+// pipeline {
+//   environment {
+//     registry = "wrightchin/jenkins-test"
+//     registryCredential = 'dockerhub'
+//     dockerImage = ''
+//   }
   agent { dockerfile true }
   stages {
     stage('Clone Repo') {
