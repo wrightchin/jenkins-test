@@ -15,14 +15,14 @@ pipeline {
       }
     }
 
-    // stage('Build') {
-    //   steps {
-    //     echo "build start ..."
-    //     script {
-    //       sh "docker build -t jenkins-test ."
-    //     }
-    //   }
-    // }
+    stage('Build') {
+      steps {
+        echo "build start ..."
+        script {
+          sh 'npm start'
+        }
+      }
+    }
 
     stage('Test') {
       steps {
