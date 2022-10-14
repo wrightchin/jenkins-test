@@ -14,7 +14,7 @@ pipeline {
       steps {
         echo "build start ..."
         script {
-          app = docker.build("jenkins-test")
+          app = docker.build("wrightchin/jenkins-test")
         }
       }
     }
